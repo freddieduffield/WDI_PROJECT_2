@@ -1,0 +1,43 @@
+
+<img src="<%= place.image %>" alt="<%= place.name %>">
+<h1><%= place.name %></h1>
+<h4><em><%= place.type %> </em><br><%= place.details%></h4>
+
+<%# delete %>
+<form  action="/places/<%= place.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE"/>
+  <button name="delete">Delete</button></form>
+   <button> <a href="/places/<%= place._id %>/edit">Edit</a></button>
+
+
+
+<h2>Music</h2>
+
+<form action="/places/<%= place._id %>" method="POST" class="form-pure" placeholder="" value="Post music">
+  <input type="text" class="pure-input-2-3" name="track" placeholder="track">
+  <input type="text" class="pure-input-2-3" name="artist" placeholder="artist">
+  <input type="text" class="pure-input-2-3" name="image" placeholder="image">
+  <input type="text" class="pure-input-2-3" name="comments" placeholder="comments">
+  <button type="submit" name="button">add</button>
+</form>
+
+
+
+<h1>music memories</h1>
+<ul>
+
+  <% place.music.forEach(music => { %>
+<%=music%>
+    <li>
+      <h5><a href="/users/<%= music.user._id %>"><%= music.user %></a></h5>
+      <img src="<%= music.image %>">
+      <p><%= music.track %></p>
+      <p><%= music.artist %></p>
+      <p><%= music.comments %></p>
+        <form action="/places/<%= place._id %>/music/<%= music._id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="" type="submit" value="Delete">
+        </form>
+    </li>
+  <% }) %>
+</ul>

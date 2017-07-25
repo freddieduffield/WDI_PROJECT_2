@@ -1,0 +1,23 @@
+<div class="pure-menu pure-menu-horizontal">
+<ul class="pure-menu-list">
+    <a class="pure-menu-heading" href="/places">Places&spaces</a>
+  <% if (locals.isLoggedIn) { %>
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/logout">log out</a>
+    </li>
+    <li class="pure-menu-item">
+    <a class="pure-menu-link" href="/places/new">New</a>
+    </li>
+    <li class="pure-menu-item">
+              <a class="pure-menu-link" href="/users/<%= user._id %>"><%= locals.user.username %></a>
+            </li>
+  <% } else { %>
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/login">log in</a>
+    </li>
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/register">register</a>
+    </li>
+  <% } %>
+</ul>
+</div>

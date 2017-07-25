@@ -1,0 +1,30 @@
+<h1>edit</h1>
+<form method="POST" action="/places/<%= place.id %>">
+  <input type="hidden" name="_method" value="PUT">
+
+  <div class="">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="Name" class="" value="<%= place.name %>">
+  </div>
+
+  <div class="">
+    <label for="details">Description</label>
+    <input type="text" name="details" class="" value="<%= place.details %>">
+  </div>
+  <%# <div class="">
+    <label for="type">Type of Venue</label>
+    <select type="text" name="type" id="">
+      <option>
+  </div>%>
+  <div class="">
+    <label for="image">image</label>
+    <input type="text" name="image" id="image" value="<%= place.image %>">
+  </div>
+
+  <div class="">
+    <label for="address">address</label>
+    <input type="text" name="address" value="" value="<%= place.address %>">
+  </div>
+
+  <button>Update</button>
+</form>
