@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project 2</title>
-    <script src="/js/client.js" charset="utf-8"></script>
+    
   <% include ./partials/stylesheets %>
+  <% include ./partials/scripts %>
   </head>
   <body>
     <% include ./partials/navbar %>
@@ -15,5 +16,12 @@
       <% } %>
       <%- body %>
     </main>
+    <footer>
+      <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li id="mapView" class=="pure-menu-link">map view</li>
+      </ul>
+        </div>
+    </footer>
   </body>
 </html>

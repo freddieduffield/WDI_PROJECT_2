@@ -1,4 +1,4 @@
-const Place = require('../models/place');
+const Place   = require('../models/place');
 
 function placesIndex(req, res, next) {
   Place
@@ -23,6 +23,7 @@ function placesCreate(req, res, next) {
 function placesShow(req, res, next) {
   Place
   .findById(req.params.id)
+  .populate('createdBy music.createdBy')
   .exec()
   .then((place) => {
     if(!place) return res.status(404).render('statics/404');

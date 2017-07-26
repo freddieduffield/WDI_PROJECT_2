@@ -1,5 +1,7 @@
 body {
   background: white;
+  margin:0;
+  padding:0;
 
   a:link{
     text-decoration: none;
@@ -10,3 +12,8 @@ body {
 img {
   width: 50%;
 }
+
+#map {
+       height: 600px;
+       width: 100%;
+      }
