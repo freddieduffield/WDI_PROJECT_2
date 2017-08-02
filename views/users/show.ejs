@@ -1,7 +1,12 @@
-<img src="<%= user.profilepic %>" alt="your face">
-<h1><%= user.username %></h1>
+<div class="container">
+<div class="row">
+  <div class="col s12 center-align">
+<img class="circle img-holder" src="<%= user.profilepic %>" alt="your face">
+<h4><%= user.username %></h4>
 <ul>
 <% places.forEach(place => { %>
   <li><a href="/places/<%=place._id %>"><%= place.name%></a></li>
 <%})%>
 </ul>
+</div>
+</div>

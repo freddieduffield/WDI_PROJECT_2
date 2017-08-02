@@ -1,43 +1,66 @@
+<div class="container">
+  <section>
+    <div class="row">
+      <div class="col s12 center-align">
+        <div class="showtitle">
+          <img class="place-img center-align" src="<%= place.image %>"></div>
+          <h1 class="title"><%= place.name %></h1>
+          <h6><em><%= place.type %> </em> <strong>created by <%= place.createdBy.username %></strong></h6>
+          <p><%= place.details%></p>
+        </div>
+      </div>
 
-<img src="<%= place.image %>" alt="<%= place.name %>">
-<h3>Created by
-<%= place.createdBy.username %>
-</h3>
-<h1><%= place.name %></h1>
-<h4><em><%= place.type %> </em><br><%= place.details%></h4>
+      <div class="center-align">
+        <button class="btn waves-effect waves-light btn-flat"> <a href="/places/<%= place._id %>/edit">Edit</a></button>
+        <form  id="delete" action="/places/<%= place.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE"/>
+          <button class="btn waves-effect waves-light btn-flat" name="delete">Delete</button></form></div>
+    </section>
 
-<%# delete %>
-<form  action="/places/<%= place.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE"/>
-  <button name="delete">Delete</button></form>
-   <button> <a href="/places/<%= place._id %>/edit">Edit</a></button>
+    <div class="row">
+      <h1 class="center-align">Music Memories</h1>
+      <% place.music.forEach(music => { %>
+        <div class="row">
+        <div class="col s8">
+        <div class="card horizontal">
+
+        <div class="card-image">
+        <img src="<%= music.image %>"></div>
+
+        <div class="card-content">
+        <p><%= music.createdBy %></p>
+        <p><%= music.track %></p><br>
+        <p><%= music.artist %></p><br>
+        <p><em><%= music.comments %></em></p>
+
+        <form action="/places/<%= place._id %>/music/<%= music._id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input class="btn waves-effect waves-light grey lighten-3" type="submit" value="Delete">
+        </form>
+        </div>
+        </div>
+        <% }) %>
+      </div>
+      </div>
+      </div>
+
+
+      <div class="container row">
+        <ul>
+          <h5>Add</h5>
+          <form action="/places/<%= place._id %>" method="POST" class="form-pure" placeholder="" value="Post music">
+            <li class="input-field"><input type="text" class="pure-input-2-3" name="track" placeholder="track"></li>
+            <li class="input-field"><input type="text" class="pure-input-2-3" name="artist" placeholder="artist"></li>
+            <li class="input-field"><input type="text" class="pure-input-2-3" name="image" placeholder="image"></li>
+            <li class="input-field"><input type="text" class="pure-input-2-3" name="comments" placeholder="comments"></li>
+            <li class="input-field"><button class="btn waves-effect waves-light grey lighten-3" type="submit" name="button">add</button></li>
+          </ul>
+        </form>
+      </div>
 
 
 
-<h2>Music</h2>
+      <footer>
 
-<form action="/places/<%= place._id %>" method="POST" class="form-pure" placeholder="" value="Post music">
-  <input type="text" class="pure-input-2-3" name="track" placeholder="track">
-  <input type="text" class="pure-input-2-3" name="artist" placeholder="artist">
-  <input type="text" class="pure-input-2-3" name="image" placeholder="image">
-  <input type="text" class="pure-input-2-3" name="comments" placeholder="comments">
-  <button type="submit" name="button">add</button>
-</form>
-
-
-
-<h1>music memories</h1>
-<ul>
-
-  <%= place.music %>
-  <% place.music.forEach(music => { %>
-
-    <li>
-      <h5><a href="/users/<%= music.createdBy %>"><%= music.createdBy %></a></h5>
-      <img src="<%= music.image %>">
-      <p>track: <%= music.track %></p>
-      <p>artist: <%= music.artist %></p>
-      <p>user : <%= music._id %></p>
-    </li>
-  <% }) %>
-</ul>
+          </footer>
+        </div>

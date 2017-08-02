@@ -1,19 +1,101 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background: white;
-  margin:0;
-  padding:0;
+  background: #FFFFFE;
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
 
-  a:link{
-    text-decoration: none;
+  .container {
+    .row {
+      margin-left: 2.25rem;
+      margin-right: -.75rem;
+  }
+}
+
+  h1{
+    margin-bottom: 50px;
   }
 
+  .place-img {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+  }
+
+.music-margin {
+  margin: 10px;
 }
 
-img {
-  width: 50%;
-}
 
+  .container {
+    width: 900px;
+  }
 #map {
        height: 600px;
        width: 100%;
       }
+
+
+  nav {
+    background-color: white;
+
+    .brand-logo{
+      color: #CCCCCC;
+    }
+
+    .color {
+      color: black;
+      }
+
+    a:hover {
+      color: grey;
+    }
+  }
+  a:link {
+    text-decoration: none;
+  }
+
+  .img-holder {
+    max-width: 140px;
+    max-height: 140px;
+    overflow: hidden;
+    margin: 20px;
+  }
+
+  .index-grid-img {
+    height: 140px;
+    width: auto;
+    min-width: 140px;
+  }
+
+}
+.showtitle {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 200px;
+  left: -12px;
+  width: 100%;
+  color: #FBFECB;
+  font-size: 100px;
+}
+
+
+#map {
+  height: 600px;
+  width: 100%;
+}
+
+.section {
+  height: 100vh;
+  color: salmon;
+}
+
+
+.btn {
+  color: #A39BA8;
+}

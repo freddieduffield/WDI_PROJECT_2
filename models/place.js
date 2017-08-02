@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const musicSchema = new mongoose.Schema({
-  createdBy: {type: mongoose.Schema.ObjectId, ref: 'User'},
+  user: {type: mongoose.Schema.ObjectId, ref: 'User'},
   track: {type: String},
   artist: {type: String},
   image: {type: String},

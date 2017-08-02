@@ -15,12 +15,12 @@ function sessionsCreate(req, res) {
 
     req.session.userId = user._id;
 
-    return res.redirect('/');
+    return res.redirect('/places');
   });
 }
 
 function sessionsDelete(req, res) {
-  return req.session.regenerate(() => res.redirect('/'));
+  return req.session.regenerate(() => res.redirect('/places'));
 }
 
 
