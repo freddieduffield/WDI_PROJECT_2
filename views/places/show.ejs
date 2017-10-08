@@ -15,33 +15,33 @@
         <form  id="delete" action="/places/<%= place.id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE"/>
           <button class="btn waves-effect waves-light btn-flat" name="delete">Delete</button></form></div>
-    </section>
+        </section>
 
-    <div class="row">
-      <h1 class="center-align">Music Memories</h1>
-      <% place.music.forEach(music => { %>
         <div class="row">
-        <div class="col s8">
-        <div class="card horizontal">
+          <h1 class="center-align">Music Memories</h1>
+          <% place.music.forEach(music => { %>
+            <div class="row">
+            <div class="col s8">
+            <div class="card horizontal">
 
-        <div class="card-image">
-        <img src="<%= music.image %>"></div>
+            <div class="card-image">
+            <img src="<%= music.image %>"></div>
 
-        <div class="card-content">
-        <p><%= music.createdBy %></p>
-        <p><%= music.track %></p><br>
-        <p><%= music.artist %></p><br>
-        <p><em><%= music.comments %></em></p>
+            <div class="card-content">
+            <p><%= music.createdBy %></p>
+            <p><%= music.track %></p><br>
+            <p><%= music.artist %></p><br>
+            <p><em><%= music.comments %></em></p>
 
-        <form action="/places/<%= place._id %>/music/<%= music._id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input class="btn waves-effect waves-light grey lighten-3" type="submit" value="Delete">
-        </form>
+            <form action="/places/<%= place._id %>/music/<%= music._id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input class="btn waves-effect waves-light grey lighten-3" type="submit" value="Delete">
+            </form>
+            </div>
+            </div>
+            <% }) %>
+          </div>
         </div>
-        </div>
-        <% }) %>
-      </div>
-      </div>
       </div>
 
 
@@ -57,10 +57,19 @@
           </ul>
         </form>
       </div>
-
-
+      <%#Youtube search %>
+      <div class="container row">
+        <ul>
+          <h5>Add</h5>
+          <form action="#" method="POST" class="form-pure" placeholder="" value="Post music">
+            <li class="input-field"><input type="text" id="search" class="pure-input-2-3" name="YouTube-Search" placeholder="YouTube Search" autocomplete="off"></li>
+            <li class="input-field"><button class="btn waves-effect waves-light grey lighten-3" type="submit" name="button">Search</button></li>
+          </ul>
+        </form>
+      </div>
+ <div id="results"></div>
 
       <footer>
 
-          </footer>
-        </div>
+      </footer>
+    </div>

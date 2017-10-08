@@ -31,10 +31,10 @@ body {
   .container {
     width: 900px;
   }
-#map {
-       height: 600px;
-       width: 100%;
-      }
+// #map {
+//        height: 600px;
+//        width: 100%;
+//       }
 
 
   nav {
@@ -85,10 +85,10 @@ body {
 }
 
 
-#map {
-  height: 600px;
-  width: 100%;
-}
+// #map {
+//   height: 600px;
+//   width: 100%;
+// }
 
 .section {
   height: 100vh;
@@ -98,4 +98,32 @@ body {
 
 .btn {
   color: #A39BA8;
+}
+#map-container {
+  height: 100vh;
+}
+
+#map {
+  height: 600px;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 120px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto', 'sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
 }
