@@ -18,12 +18,18 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({'address': address}, function(results, status){
     if (status === 'OK') {
       resultsMap.setCenter(results[0].geometry.location);
+      console.log(results[0].geometry.location);
       var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location
       });
+
     } else {
       alert('Your place was not found, for the following reason: ' + status);
     }
   });
+}
+
+function addMarkerForEachPlace(address) {
+
 }
