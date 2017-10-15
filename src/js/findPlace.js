@@ -5,6 +5,7 @@ function initMap() {
     {
       zoom: 8,
       center: {lat: 42.331429, lng: -83.045753}
+      mapTypeId: 'satellite'
     });
   var geocoder = new google.maps.Geocoder();
 
