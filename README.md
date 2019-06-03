@@ -1,6 +1,6 @@
-#Places & Spaces
+# Places & Spaces
 
-###Locate your memories of music
+### Locate your memories of music
 -
 ![Alt text](/Users/frederickfoxxx/Desktop/Screen Shot 2017-10-12 at 07.00.52.png)
 -
